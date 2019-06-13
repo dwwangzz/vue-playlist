@@ -2,7 +2,9 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <users></users>
+    <!-- 属性传值：父组件传到子组件 -->
+    <users v-bind:users="users2" v-bind:title="title"></users>
+    <users v-bind:users="users2" v-bind:title="title"></users>
     <app-footer></app-footer>
     <!-- 局部组件 -->
     <!-- <HelloWorld /> -->
@@ -26,6 +28,22 @@
       // 自定义组件名称
       "app-header": Header,
       "app-footer": Footer
+    },
+    data() {
+      return {
+        users2: [
+          {name: "张三", job: "收垃圾的", show: false},
+          {name: "李四", job: "开奔驰的", show: false},
+          {name: "王五", job: "开公司的", show: false},
+          {name: "王五", job: "开公司的", show: false},
+          {name: "王五", job: "开公司的", show: false},
+          {name: "王五", job: "开公司的", show: false},
+          {name: "王五", job: "开公司的", show: false},
+          {name: "王五", job: "开公司的", show: false},
+          {name: "王五", job: "开公司的", show: false}
+        ],
+        title: "父组件传值给子组件，请点击查看效果"
+      }
     }
   }
 </script>

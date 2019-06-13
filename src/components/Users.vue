@@ -1,6 +1,6 @@
 <template>
   <div class="users">
-    <h1>用户列表</h1>
+    <h1 @click="title='title已经改变'">用户列表 | {{title}}</h1>
     <ul>
       <li v-for="(user,index) in users"
           v-on:click="user.show = !user.show">
@@ -8,27 +8,27 @@
         <h3 v-show="user.show">{{user.job}}</h3>
       </li>
     </ul>
+    <button @click="users.pop()">删除一个</button>
   </div>
 </template>
 
+<!--
+  传值：string、number、boolean ，改变一个，其他的不会跟随改变
+  引用：array、object ，改变一个，所有的都会跟着改变
+-->
 <script>
   export default {
     name: 'users',
-    data() {
-      return {
-        users: [
-          {name: "张三", job: "收垃圾的", show: false},
-          {name: "李四", job: "开奔驰的", show: false},
-          {name: "王五", job: "开公司的", show: false},
-          {name: "王五", job: "开公司的", show: false},
-          {name: "王五", job: "开公司的", show: false},
-          {name: "王五", job: "开公司的", show: false},
-          {name: "王五", job: "开公司的", show: false},
-          {name: "王五", job: "开公司的", show: false},
-          {name: "王五", job: "开公司的", show: false}
-        ]
+    // props: ["users"],
+    props: {
+      users: {
+        type: Array,
+        required: true
+      },
+      title: {
+        type: String
       }
-    }
+    },
   }
 </script>
 
