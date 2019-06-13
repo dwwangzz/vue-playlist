@@ -1,6 +1,6 @@
 <template>
   <div class="users">
-    <h1 @click="title='title已经改变'">用户列表 | {{title}}</h1>
+    <h1 v-on:click="title='title已经改变'">用户列表 | {{title}}</h1>
     <ul>
       <li v-for="(user,index) in users"
           v-on:click="user.show = !user.show">
@@ -28,7 +28,7 @@
       title: {
         type: String
       }
-    },
+    }
   }
 </script>
 
