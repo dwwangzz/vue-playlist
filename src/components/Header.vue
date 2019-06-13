@@ -1,15 +1,15 @@
 <template>
-  <div class="hello">
+  <header>
     <h1>{{title}}</h1>
-  </div>
+  </header>
 </template>
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'app-header',
     data() {
       return {
-        title: '这是我的第一个脚手架项目'
+        title: 'Vue.js Demo'
       }
     }
   }
@@ -17,7 +17,13 @@
 
 <!-- css 作用域，有scoped属性之后就只作用于当前页面 -->
 <style scoped>
-  h1 {
-    color: #0f5;
+  header {
+    background-color: #00ff55;
+
   }
+  h1 {
+    text-align: center;
+    padding: 10px;
+  }
+
 </style>
